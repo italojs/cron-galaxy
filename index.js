@@ -1,13 +1,13 @@
 const cron = require('node-cron');
 
-console.log('Iniciando o serviço de cron...');
+console.log('Starting the cron service...');
 
-// Configurando o cron para executar a cada 30 segundos
-// Os 5 campos são: minuto, hora, dia do mês, mês, dia da semana
-// '*/30 * * * * *' significa: a cada 30 segundos
+// Configuring the cron to run every 30 seconds
+// The 5 fields are: minute, hour, day of the month, month, day of the week
+// '*/30 * * * * *' means: every 30 seconds
 cron.schedule('*/30 * * * * *', () => {
-  const agora = new Date();
-  console.log(`Executando cron job em: ${agora.toLocaleString()}`);
+  const now = new Date();
+  console.log(`===============> Executing cron job at: ${now.toLocaleString()}`);
 });
 
-console.log('Cron job configurado com sucesso! Aguardando execuções...');
+console.log('Cron job successfully configured! Waiting for executions...');
